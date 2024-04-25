@@ -71,7 +71,7 @@ body {
 }
 
 .hero {
-  background-image: url('./assets/bank-tree.jpeg');
+  background-image: url('../assets/bank-tree.jpeg');
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -272,6 +272,18 @@ body {
   font-weight: bold;
   margin-top: 1rem;
   border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+}
+
+.update-button{
+  display: inline-block;
+  width: 10%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px auto;
+  border-color: hsl(158, 100%, 37%);
   background-color: #00bc77;
   color: #fff;
 }

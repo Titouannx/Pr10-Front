@@ -6,11 +6,25 @@ import Footer from '../components/Footer';
 import iconChat from '../assets/icon-chat.png';
 import iconMoney from '../assets/icon-money.png';
 import iconSecurity from '../assets/icon-security.png';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUserProfile } from "../slices/auth";
 
 function Home() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+
+  useEffect(() => {
+    dispatch(fetchUserProfile());
+  }, [dispatch]);
+
   return (
     <div>
-      <Header />
+      {user ? (
+        <Header username={(user.firstName || '') + " " + (user.lastName || '')} />
+        ) : (
+          <Header />
+      )}
       <main>
         <Hero />
         <section className="features">
